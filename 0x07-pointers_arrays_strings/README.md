@@ -4,3 +4,4 @@
 0. _memset : Write a function that fills memory with a constant byte.
 1. _memcpy : Write a function that copies memory area.
 2. _strchr : Write a function that locates a character in a string.
+3. _strspn : Write a function that gets the length of a prefix substring.
