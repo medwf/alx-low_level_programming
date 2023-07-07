@@ -5,6 +5,9 @@ create static libraries .
 
 ### Task.
 0. A library is not a luxury but one of the necessities of life : Create the static library libmy.a containing all the functions listed below:
+use this command to copy file start from root repo : 
+_find . -type f -name "name of file" -exec cp {} 0x09-static_libraries/ \;_
+main.h :`
 int _putchar(char c);
 int _islower(int c);
 int _isalpha(int c);
@@ -24,6 +27,6 @@ char *_memcpy(char *dest, char *src, unsigned int n);
 char *_strchr(char *s, char c);
 unsigned int _strspn(char *s, char *accept);
 char *_strpbrk(char *s, char *accept);
-char *_strstr(char *haystack, char *needle);
+char *_strstr(char *haystack, char *needle);`
 
-
+1. Without libraries what have we? We have no past and no future : Create a script called create_static_lib.sh that creates a static library called liball.a from all the .c files that are in the current directory.
