@@ -17,9 +17,15 @@ The malloc function allocates a specific number of bytes in memory and returns a
 When writing big and complex programs, it is not always easy to keep track of all allocated and deallocated memory. We can use the program Valgrind in order to ensure we are freeing all allocated memory. It is a programming tool for memory debugging, memory leak detection, and profiling.
 
 ## Task
-1. 0. Float like a butterfly, sting like a bee : Write a function that creates an array of chars, and initializes it with a specific char.
+ 0. Float like a butterfly, sting like a bee : Write a function that creates an array of chars, and initializes it with a specific char.
 
     - Prototype: char *create_array(unsigned int size, char c);
     - Returns NULL if size = 0
     - Returns a pointer to the array, or NULL if it fails
 
+1. The woman who has no imagination has no wings : Write a function that returns a pointer to a newly allocated space in memory, which contains a copy of the string given as a parameter.
+
+    - Prototype: char *_strdup(char *str);
+    - The _strdup() function returns a pointer to a new string which is a duplicate of the string str. Memory for the new string is obtained with malloc, and can be freed with free.
+    - Returns NULL if str = NULL
+    - On success, the _strdup function returns a pointer to the duplicated string. It returns NULL if insufficient memory was available
