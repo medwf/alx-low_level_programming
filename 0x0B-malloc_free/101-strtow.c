@@ -52,14 +52,17 @@ char **strtow(char *str)
 	char **strtow;
 	int i, j, l, len, num_wd;
 
-	if (str == NULL || str[0] == '\0')
+	if (str == NULL || *str == '\0')
 		return (NULL);
 
 	num_wd = count_words(str);
 
 	strtow = malloc(sizeof(char *) * (num_wd + 1));
-	if (strtow == NULL)
+	if (strtow == NULL || num_wd == 0)
+	{
+		free(strtow);
 		return (NULL);
+	}
 	i = 0;
 	l = 0;
 	while (str[i] != '\0' && l < num_wd)
