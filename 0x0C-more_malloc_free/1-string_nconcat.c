@@ -12,6 +12,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *ncouncat;
 	unsigned int i = 0, j = 0;
 	unsigned int s2_length = strlen(s2);
+	unsigned int s1_length = strlen(s1);
 
 	if (n < s2_length)
 		ncouncat = malloc(sizeof(char) * (s1_length + n + 1));
