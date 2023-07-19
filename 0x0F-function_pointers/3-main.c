@@ -19,9 +19,9 @@ int main(int argc, char *argv[])
 
 	a = atoi(argv[1]);
 	b = atoi(argv[3]);
-	op = argv[2];
+	op = argv[2][0];
 
-	if (argv[2][1] != '\0' || (op != '+' && op != '-' &&
+	if (argv[2][1] != '\0' && (op != '+' && op != '-' &&
 		op != '/' && op != '*' && op != '%'))
 	{
 		printf("Error\n");
