@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-    print_all("ceis", 'B', 3, NULL);
+    print_all("", 'B', 3, "hi mohamed wa ta fin");
     return (0);
 }
 
