@@ -7,7 +7,6 @@
  */
 int main(void)
 {
-    print_all("", 'B', 3, "hi mohamed wa ta fin");
+	print_all("aceis", 'B', 3, "stSchool");
     return (0);
 }
-

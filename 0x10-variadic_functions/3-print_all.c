@@ -5,14 +5,13 @@
  */
 void print_all(const char * const format, ...)
 {
-	int i = 0, len = 0, print_int;
+	int i = 0, print_int;
 	char print_char, *print_str, *separator = "";
 	float print_float;
 	va_list p;
 
-	len = strlen(format);
 	va_start(p, format);
-	while (i < len && format != NULL)
+	while (format && format[i])
 	{
 		switch (format[i])
 		{
@@ -35,7 +34,8 @@ void print_all(const char * const format, ...)
 				printf("%s%s", separator, print_str);
 				break;
 			default:
-				break;
+				i++;
+				continue;
 		}
 		separator = ", ";
 		i++;
