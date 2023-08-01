@@ -13,7 +13,7 @@ int sum_listint(listint_t *head)
 	if (!head)
 		return (0);
 	move_node = head;
-	while (move_node->next)
+	while (move_node)
 	{
 		move_node = move_node->next;
 		sum += move_node->n;
