@@ -18,7 +18,7 @@ listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 		move_node = move_node->next;
 		num_node++;
 	}
-	if (!head || (num_node < index))
+	if (!head || (num_node <= index))
 		return (NULL);
 	move_node = head;
 	while (index)
