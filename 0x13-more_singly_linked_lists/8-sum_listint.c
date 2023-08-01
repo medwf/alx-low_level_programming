@@ -10,6 +10,8 @@ int sum_listint(listint_t *head)
 	listint_t *move_node = NULL;
 	int sum = 0;
 
+	if (!head)
+		return (0);
 	move_node = head;
 	while (move_node->next)
 	{
