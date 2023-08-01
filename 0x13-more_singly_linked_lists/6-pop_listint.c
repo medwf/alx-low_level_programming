@@ -11,6 +11,8 @@ int pop_listint(listint_t **head)
 	listint_t *fr_firstnode = NULL;
 	int data = 0;
 
+	if (!*head)
+		return (0);
 	data =  (*head)->n;
 	fr_firstnode = *head;
 	*head = (*head)->next;
