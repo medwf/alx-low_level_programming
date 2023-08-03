@@ -7,7 +7,7 @@
 void print_binary(unsigned long int n)
 {
 	int count_bit = 0;
-	unsigned int second_n = n;
+	unsigned long int second_n = n;
 
 	while (second_n > 0)
 	{
