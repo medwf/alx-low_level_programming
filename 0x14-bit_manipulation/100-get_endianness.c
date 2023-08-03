@@ -6,7 +6,7 @@
 */
 int get_endianness(void)
 {
-	int random_number = 1;
+	int random_number = 2;
 
 	if (random_number & 1)
 		return (0);
