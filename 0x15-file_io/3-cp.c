@@ -58,32 +58,39 @@ int main(int argc, char **argv)
 	int file_from, file_to, read_file_from, write_file_to;
 	char *stored;
 
+	/* if the number of argument is not the correct */
 	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
+
+	/* Open file_from and file_to and error it not opened */
 	file_from = open(argv[1], O_RDONLY);
 	print_error(file_from, 0, argv[1]);
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC
 			, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
 
 	print_error(0, file_to, argv[2]);
+
+	/* creat malloc for stored data */
+	stored = malloc(sizeof(char) * 1024 + 1);
+	if (!stored)
+		return (0);
+
+	/* copy from file_from and past to file to */
 	while (read_file_from)
 	{
-		stored = malloc(sizeof(char) * 1024 + 1);
-		if (!stored)
-			return (0);
 		read_file_from = read(file_from, stored, 1024);
+		print_error(read_file_from, 0, argv[1]);
 		stored[1024] = '\0';
 
-		print_error(read_file_from, 0, argv[1]);
 		write_file_to = write(file_to, stored, read_file_from);
-
 		if (read_file_from != write_file_to)
 			print_error(0, -1, argv[2]);
 	}
 
+	/* free stored and close all*/
 	free(stored);
 	close_all(file_from, file_to);
 	return (0);
