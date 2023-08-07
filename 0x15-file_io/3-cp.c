@@ -1,10 +1,13 @@
 #include "main.h"
 /**
-* print_error - a funtion that print error.
-* @file_from: first file.
-* @file_to: second file.
-* Return: 
-*/
+ * print_error - a funtion that print error.
+ * @file_from: first file.
+ * @file_to: second file.
+ * @a: pointer to string.
+ * Return: 98 if cant read.
+ *         99 if cant write.
+ *          0 return.
+ */
 int print_error(int file_from, int file_to, char *a)
 {
 	if (file_from == -1)
@@ -64,7 +67,7 @@ int main(int argc, char **argv)
 	print_error(file_from, 0, argv[1]);
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC
 			, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
-	
+
 	print_error(0, file_to, argv[2]);
 	while (read_file_from)
 	{
@@ -73,14 +76,14 @@ int main(int argc, char **argv)
 			return (0);
 		read_file_from = read(file_from, stored, 1024);
 		stored[1024] = '\0';
-		
+
 		print_error(read_file_from, 0, argv[1]);
 		write_file_to = write(file_to, stored, read_file_from);
-		
+
 		if (read_file_from != write_file_to)
 			print_error(0, -1, argv[2]);
 	}
-	
+
 	free(stored);
 	close_all(file_from, file_to);
 	return (0);
