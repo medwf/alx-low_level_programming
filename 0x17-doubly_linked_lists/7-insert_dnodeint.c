@@ -1,5 +1,21 @@
 #include "lists.h"
-
+/**
+ * add_dnodeint - a function that adds a new node
+ *                   at the beginning of a dlistint_t list.
+ * @head: a pointer to linked list.
+ * @n : an integer to new linked list
+ * Return: head with new liked list or NULL (failed)
+ */
+dlistint_t *add_dnodeint(dlistint_t **head, const int n);
+/**
+ * add_dnodeint_end - a function that adds a new node
+ *                        at the end of a dlistint_t list.
+ * @head: a pointer to linked lists.
+ * @n: an integer for new linked list.
+ * Return: the address of the new element,
+ *           or NULL if it failed
+ */
+dlistint_t *add_dnodeint_end(dlistint_t **head, const int n);
 /**
  * insert_dnodeint_at_index - a function that inserts
  *                              a new node at a given position.
