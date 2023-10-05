@@ -30,7 +30,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 		while (helper->next)
 		{
-			if (strncmp(new_node->key, helper->key, strlen(helper->key) - 1) == 0)
+			if (strncmp(new_node->key, helper->key, strlen(helper->key) + 1) == 0)
 			{
 				free(helper->value);
 				helper->value = strdup(value);
