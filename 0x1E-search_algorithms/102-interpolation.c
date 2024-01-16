@@ -15,7 +15,10 @@ int recrv(int *array, size_t low, size_t high, int value)
 	(value - array[low]));
 
 	if ((low >= high) || (pos > high))
+	{
+		printf("Value checked array[%ld] is out of range\n", pos);
 		return (-1);
+	}
 	printf("Value checked array[%ld] = [%d]\n", pos, array[pos]);
 	if (array[pos] == value)
 		return (pos);
