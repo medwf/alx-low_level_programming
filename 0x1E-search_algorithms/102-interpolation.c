@@ -39,7 +39,7 @@ int recrv(int *array, size_t low, size_t high, int value)
 */
 int interpolation_search(int *array, size_t size, int value)
 {
-	if (array && size > 0)
+	if (array && size > 0 && value)
 		return (recrv(array, 0, size - 1, value));
 	return (-1);
 }
