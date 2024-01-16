@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "search_algos.h"
 
 /**
@@ -18,5 +17,5 @@ int main(void)
 	printf("Found %d at index: %d\n\n", 1, jump_search(array, size, 1));
 	printf("Found %d at index: %d\n", 999, jump_search(array, size, 999));
 	printf("Found %d at index: %d\n", 999, jump_search(array, size, 9));
-	return (EXIT_SUCCESS);
+	return (0);
 }
