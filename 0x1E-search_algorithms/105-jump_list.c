@@ -13,7 +13,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 	listint_t *Bstep = list, *Astep = list;
 	size_t jumb/*, outOfRange*/;
 
-	if (list && size)
+	if (list && size > 0)
 	{
 		while (Astep && Astep->n < value)
 		{
